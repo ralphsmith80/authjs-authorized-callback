@@ -38,15 +38,17 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
   callbacks: {
     // authorized: async ({ auth, request }) => {
     //   // Logged in users are authenticated, otherwise redirect to login page based on the middleware matcher
-    //   if (!auth) {
-    //     const url = `${new URL(request.nextUrl.origin)}api/auth/signin`
-    //     console.log('####not authorized', url)
-    //     // return NextResponse.json('Invalid auth token', { status: 401 })
-    //     return NextResponse.redirect(url)
-    //     // return Response.redirect(url)
-    //     // return false
-    //   }
-    //   return true
+    //   return !!auth
+    //   // Attempting to manually redirect the user
+    //   // if (!auth) {
+    //   //   const url = `${new URL(request.nextUrl.origin)}api/auth/signin`
+    //   //   console.log('####not authorized', url)
+    //   //   // return NextResponse.json('Invalid auth token', { status: 401 })
+    //   //   return NextResponse.redirect(url)
+    //   //   // return Response.redirect(url)
+    //   //   // return false
+    //   // }
+    //   // return true
     // },
   },
 })
